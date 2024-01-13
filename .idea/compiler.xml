@@ -2,18 +2,29 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="club-subject-api" />
+        <module name="club-auth-application" />
         <module name="club-domain" />
         <module name="club-application-controller" />
+        <module name="club-auth-domain" />
         <module name="club-starter" />
-        <module name="club-application-mq" />
-        <module name="club-common" />
+        <module name="club-auth-application-controller" />
         <module name="club-application-job" />
+        <module name="club-auth-application-job" />
+        <module name="club-gateway" />
         <module name="club-infra" />
+        <module name="club-auth-infra" />
+        <module name="club-subject-api" />
+        <module name="club-auth-api" />
+        <module name="club-application-mq" />
+        <module name="club-auth-starter" />
+        <module name="club-auth-application-mq" />
+        <module name="club-common" />
+        <module name="club-auth-common" />
       </profile>
     </annotationProcessing>
   </component>
