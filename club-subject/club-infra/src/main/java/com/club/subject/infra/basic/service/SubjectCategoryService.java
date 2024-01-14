@@ -2,15 +2,18 @@ package com.club.subject.infra.basic.service;
 
 import com.club.subject.infra.basic.entity.SubjectCategory;
 
+import java.util.List;
+
 /**
- * 题目分类表(SubjectCategory)表服务接口
+ * 题目分类(SubjectCategory)表服务接口
  *
  * @author makejava
- * @since 2023-12-17 18:13:58
+ * @since 2023-10-01 21:50:03
  */
 public interface SubjectCategoryService {
 
     SubjectCategory insert(SubjectCategory subjectCategory);
+
     /**
      * 通过ID查询单条数据
      *
@@ -18,7 +21,6 @@ public interface SubjectCategoryService {
      * @return 实例对象
      */
     SubjectCategory queryById(Long id);
-
 
     /**
      * 修改数据
@@ -36,4 +38,8 @@ public interface SubjectCategoryService {
      */
     boolean deleteById(Long id);
 
+    /**
+     * 查询岗位大类
+     */
+    List<SubjectCategory> queryPrimaryCategory();
 }

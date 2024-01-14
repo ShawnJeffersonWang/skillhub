@@ -1,23 +1,28 @@
 package com.club.subject.infra.basic.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.club.subject.infra.basic.entity.SubjectCategory;
 import com.club.subject.infra.basic.mapper.SubjectCategoryDao;
 import com.club.subject.infra.basic.service.SubjectCategoryService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
- * 题目分类表(SubjectCategory)表服务实现类
+ * 题目分类(SubjectCategory)表服务实现类
  *
  * @author makejava
- * @since 2023-12-17 18:13:59
+ * @since 2023-10-01 21:50:05
  */
 @Service("subjectCategoryService")
+@Slf4j
 public class SubjectCategoryServiceImpl implements SubjectCategoryService {
 
     @Resource
     private SubjectCategoryDao subjectCategoryDao;
+
 
     /**
      * 新增数据
@@ -27,6 +32,10 @@ public class SubjectCategoryServiceImpl implements SubjectCategoryService {
      */
     @Override
     public SubjectCategory insert(SubjectCategory subjectCategory) {
+        if (log.isInfoEnabled()) {
+            log.info("SubjectCategoryController.add.subjectCategory:{}"
+                    , JSON.toJSONString(subjectCategory));
+        }
         this.subjectCategoryDao.insert(subjectCategory);
         return subjectCategory;
     }
@@ -57,5 +66,10 @@ public class SubjectCategoryServiceImpl implements SubjectCategoryService {
     @Override
     public boolean deleteById(Long id) {
         return this.subjectCategoryDao.deleteById(id) > 0;
+    }
+
+    @Override
+    public List<SubjectCategory> queryPrimaryCategory() {
+        return this.subjectCategoryDao.queryPrimaryCategory();
     }
 }

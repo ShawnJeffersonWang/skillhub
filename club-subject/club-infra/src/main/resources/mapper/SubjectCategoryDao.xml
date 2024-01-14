@@ -4,16 +4,27 @@
 
     <resultMap type="com.club.subject.infra.basic.entity.SubjectCategory" id="SubjectCategoryMap">
         <result property="id" column="id" jdbcType="INTEGER"/>
-        <result property="catergoryName" column="catergory_name" jdbcType="VARCHAR"/>
+        <result property="categoryName" column="category_name" jdbcType="VARCHAR"/>
         <result property="categoryType" column="category_type" jdbcType="INTEGER"/>
         <result property="imageUrl" column="image_url" jdbcType="VARCHAR"/>
         <result property="parentId" column="parent_id" jdbcType="INTEGER"/>
+        <result property="createdBy" column="created_by" jdbcType="VARCHAR"/>
+        <result property="createdTime" column="created_time" jdbcType="TIMESTAMP"/>
+        <result property="updateBy" column="update_by" jdbcType="VARCHAR"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <!--查询单个-->
     <select id="queryById" resultMap="SubjectCategoryMap">
-        select
-idcatergory_namecategory_typeimage_urlparent_id
+        select id,
+               category_name,
+               category_type,
+               image_url,
+               parent_id,
+               created_by,
+               created_time,
+               update_by,
+               update_time
         from subject_category
         where id = #{id}
     </select>
@@ -21,14 +32,14 @@ idcatergory_namecategory_typeimage_urlparent_id
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="SubjectCategoryMap">
         select
-idcatergory_namecategory_typeimage_urlparent_id
+        id, category_name, category_type, image_url, parent_id, created_by, created_time, update_by, update_time
         from subject_category
         <where>
             <if test="id != null">
                 and id = #{id}
             </if>
-            <if test="catergoryName != null and catergoryName != ''">
-                and catergory_name = #{catergoryName}
+            <if test="categoryName != null and categoryName != ''">
+                and category_name = #{categoryName}
             </if>
             <if test="categoryType != null">
                 and category_type = #{categoryType}
@@ -38,6 +49,18 @@ idcatergory_namecategory_typeimage_urlparent_id
             </if>
             <if test="parentId != null">
                 and parent_id = #{parentId}
+            </if>
+            <if test="createdBy != null and createdBy != ''">
+                and created_by = #{createdBy}
+            </if>
+            <if test="createdTime != null">
+                and created_time = #{createdTime}
+            </if>
+            <if test="updateBy != null and updateBy != ''">
+                and update_by = #{updateBy}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
             </if>
         </where>
         limit #{pageable.offset}, #{pageable.pageSize}
@@ -51,8 +74,8 @@ idcatergory_namecategory_typeimage_urlparent_id
             <if test="id != null">
                 and id = #{id}
             </if>
-            <if test="catergoryName != null and catergoryName != ''">
-                and catergory_name = #{catergoryName}
+            <if test="categoryName != null and categoryName != ''">
+                and category_name = #{categoryName}
             </if>
             <if test="categoryType != null">
                 and category_type = #{categoryType}
@@ -63,31 +86,56 @@ idcatergory_namecategory_typeimage_urlparent_id
             <if test="parentId != null">
                 and parent_id = #{parentId}
             </if>
+            <if test="createdBy != null and createdBy != ''">
+                and created_by = #{createdBy}
+            </if>
+            <if test="createdTime != null">
+                and created_time = #{createdTime}
+            </if>
+            <if test="updateBy != null and updateBy != ''">
+                and update_by = #{updateBy}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
         </where>
     </select>
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
-        insert into subject_category(catergory_namecategory_typeimage_urlparent_id)
-        values (#{catergoryName}#{categoryType}#{imageUrl}#{parentId})
+        insert into subject_category(category_name, category_type, image_url, parent_id, created_by, created_time,
+                                     update_by, update_time)
+        values (#{categoryName}, #{categoryType}, #{imageUrl}, #{parentId}, #{createdBy}, #{createdTime}, #{updateBy},
+                #{updateTime})
     </insert>
 
     <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into subject_category(catergory_namecategory_typeimage_urlparent_id)
+        insert into subject_category(category_name, category_type, image_url, parent_id, created_by, created_time,
+        update_by, update_time)
         values
         <foreach collection="entities" item="entity" separator=",">
-        (#{entity.catergoryName}#{entity.categoryType}#{entity.imageUrl}#{entity.parentId})
+            (#{entity.categoryName}, #{entity.categoryType}, #{entity.imageUrl}, #{entity.parentId},
+            #{entity.createdBy}, #{entity.createdTime}, #{entity.updateBy}, #{entity.updateTime})
         </foreach>
     </insert>
 
     <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into subject_category(catergory_namecategory_typeimage_urlparent_id)
+        insert into subject_category(category_name, category_type, image_url, parent_id, created_by, created_time,
+        update_by, update_time)
         values
         <foreach collection="entities" item="entity" separator=",">
-            (#{entity.catergoryName}#{entity.categoryType}#{entity.imageUrl}#{entity.parentId})
+            (#{entity.categoryName}, #{entity.categoryType}, #{entity.imageUrl}, #{entity.parentId},
+            #{entity.createdBy}, #{entity.createdTime}, #{entity.updateBy}, #{entity.updateTime})
         </foreach>
         on duplicate key update
-catergory_name = values(catergory_name)category_type = values(category_type)image_url = values(image_url)parent_id = values(parent_id)
+        category_name = values(category_name),
+        category_type = values(category_type),
+        image_url = values(image_url),
+        parent_id = values(parent_id),
+        created_by = values(created_by),
+        created_time = values(created_time),
+        update_by = values(update_by),
+        update_time = values(update_time)
     </insert>
 
     <!--通过主键修改数据-->
@@ -95,7 +143,7 @@ catergory_name = values(catergory_name)category_type = values(category_type)imag
         update subject_category
         <set>
             <if test="categoryName != null and categoryName != ''">
-                catergory_name = #{catergoryName},
+                category_name = #{categoryName},
             </if>
             <if test="categoryType != null">
                 category_type = #{categoryType},
@@ -106,13 +154,27 @@ catergory_name = values(catergory_name)category_type = values(category_type)imag
             <if test="parentId != null">
                 parent_id = #{parentId},
             </if>
+            <if test="createdBy != null and createdBy != ''">
+                created_by = #{createdBy},
+            </if>
+            <if test="createdTime != null">
+                created_time = #{createdTime},
+            </if>
+            <if test="updateBy != null and updateBy != ''">
+                update_by = #{updateBy},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
         </set>
         where id = #{id}
     </update>
 
     <!--通过主键删除-->
     <delete id="deleteById">
-        delete from subject_category where id = #{id}
+        delete
+        from subject_category
+        where id = #{id}
     </delete>
 
 </mapper>

@@ -9,13 +9,20 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.club</groupId>
     <artifactId>club-domain</artifactId>
+    <dependencies>
+        <!-- domain层要调基础设施层，domain就要引入基础设施层 -->
+        <dependency>
+            <groupId>com.club</groupId>
+            <artifactId>club-infra</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
-<!--    <properties>-->
-<!--        <maven.compiler.source>21</maven.compiler.source>-->
-<!--        <maven.compiler.target>21</maven.compiler.target>-->
-<!--        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
-<!--    </properties>-->
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
 </project>
