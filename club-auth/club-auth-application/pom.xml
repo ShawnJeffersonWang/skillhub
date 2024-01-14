@@ -10,6 +10,12 @@
     </parent>
 
     <artifactId>club-auth-application</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>club-auth-application-job</module>
+        <module>club-auth-application-controller</module>
+        <module>club-auth-application-mq</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>

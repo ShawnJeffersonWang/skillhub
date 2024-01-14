@@ -13,7 +13,7 @@ import org.springframework.context.annotation.ComponentScan;
 */
 @SpringBootApplication
 @ComponentScan("com.club")
-@MapperScan("com.club.**.mapper")
+//@MapperScan("com.club.**.mapper")
 public class AuthApplication {
 
    public static void main(String[] args) {

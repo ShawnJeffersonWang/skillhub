@@ -8,6 +8,7 @@ import com.club.subject.common.entity.Result;
 import com.club.subject.domain.entity.SubjectCategoryBO;
 import com.club.subject.domain.service.SubjectCategoryDomainService;
 import com.google.common.base.Preconditions;
+import io.micrometer.common.util.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,9 +40,9 @@ public class SubjectCategoryController {
             }
 
             Preconditions.checkNotNull(subjectCategoryDTO.getCategoryType(), "分类类型不能为空");
-//            Preconditions.checkArgument(StringUtil., );
+            Preconditions.checkArgument(!StringUtils.isBlank(subjectCategoryDTO.getCategoryName()), "分类名称不能为空");
             Preconditions.checkNotNull(subjectCategoryDTO.getParentId(), "分类父级id不能为空");
-            SubjectCategoryBO subjectCategoryBO = SubjectCategoryDTOConverter.INSTANCE.convertBoToCategory(subjectCategoryDTO);
+            SubjectCategoryBO subjectCategoryBO = SubjectCategoryDTOConverter.INSTANCE.convertDtoToCategoryBO(subjectCategoryDTO);
             subjectCategoryDomainService.add(subjectCategoryBO);
             return Result.ok(true);
         } catch (Exception e) {
@@ -51,16 +52,16 @@ public class SubjectCategoryController {
     }
 
 
-    @PostMapping("/queryCategoryByPrimary")
-    public Result<List<SubjectCategoryDTO>> queryCategoryByPrimary() {
-        try {
-            List<SubjectCategoryBO> subjectCategoryBOList = subjectCategoryDomainService.queryPrimaryCategory();
-            List<SubjectCategoryDTO> subjectCategoryDTOList = SubjectCategoryDTOConverter.INSTANCE.
-                    convertBoToCategoryDTOList(subjectCategoryBOList);
-            return Result.ok(subjectCategoryDTOList);
-        } catch (Exception e) {
-            log.error("SubjectCategoryController.queryPrimaryCategory.error{}", e.getMessage(), e);
-            return Result.fail("查询失败");
-        }
-    }
+//    @PostMapping("/queryCategoryByPrimary")
+//    public Result<List<SubjectCategoryDTO>> queryCategoryByPrimary() {
+//        try {
+//            List<SubjectCategoryBO> subjectCategoryBOList = subjectCategoryDomainService.queryPrimaryCategory();
+//            List<SubjectCategoryDTO> subjectCategoryDTOList = SubjectCategoryDTOConverter.INSTANCE.
+//                    convertBoToCategoryDTOList(subjectCategoryBOList);
+//            return Result.ok(subjectCategoryDTOList);
+//        } catch (Exception e) {
+//            log.error("SubjectCategoryController.queryPrimaryCategory.error{}", e.getMessage(), e);
+//            return Result.fail("查询失败");
+//        }
+//    }
 }

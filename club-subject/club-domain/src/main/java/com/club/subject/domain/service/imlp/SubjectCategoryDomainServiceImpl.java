@@ -28,15 +28,15 @@ public class SubjectCategoryDomainServiceImpl implements SubjectCategoryDomainSe
         subjectCategoryService.insert(subjectCategory);
     }
 
-    @Override
-    public List<SubjectCategoryBO> queryPrimaryCategory() {
-        List<SubjectCategory> subjectCategoryList = subjectCategoryService.queryPrimaryCategory();
-        List<SubjectCategoryBO> boList = SubjectCategoryConverter.INSTANCE
-                .convertBoToCategory(subjectCategoryList);
-        if (log.isInfoEnabled()) {
-            log.info("SubjectCategoryController.queryPrimaryCategory.boList:{}",
-                    JSON.toJSONString(boList));
-        }
-        return boList;
-    }
+//    @Override
+//    public List<SubjectCategoryBO> queryPrimaryCategory() {
+//        List<SubjectCategory> subjectCategoryList = subjectCategoryService.queryPrimaryCategory();
+//        List<SubjectCategoryBO> boList = SubjectCategoryConverter.INSTANCE
+//                .convertBoToCategory(subjectCategoryList);
+//        if (log.isInfoEnabled()) {
+//            log.info("SubjectCategoryController.queryPrimaryCategory.boList:{}",
+//                    JSON.toJSONString(boList));
+//        }
+//        return boList;
+//    }
 }

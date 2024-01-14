@@ -7,7 +7,14 @@
         <option value="$PROJECT_DIR$/club-subject/pom.xml" />
         <option value="$PROJECT_DIR$/club-auth/pom.xml" />
         <option value="$PROJECT_DIR$/club-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/club-auth/club-auth-application/club-auth-application-mq/pom.xml" />
+        <option value="$PROJECT_DIR$/jc-club-auth/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/jc-club-auth/pom.xml" />
+      </set>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>

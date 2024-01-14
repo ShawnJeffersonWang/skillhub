@@ -10,14 +10,11 @@
     <packaging>pom</packaging>
     <modules>
         <module>club-auth-application</module>
-        <module>club-auth-application/club-auth-application-controller</module>
-        <module>club-auth-application/club-auth-application-job</module>
-        <module>club-auth-application/club-auth-application-mq</module>
         <module>club-auth-common</module>
         <module>club-auth-domain</module>
         <module>club-auth-infra</module>
-        <module>club-auth-starter</module>
         <module>club-auth-api</module>
+        <module>club-auth-starter</module>
     </modules>
 
     <properties>
@@ -31,7 +28,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-dependencies</artifactId>
-            <version>3.0.4</version>
+            <version>3.1.0</version>
             <type>pom</type>
             <scope>import</scope>
         </dependency>
@@ -45,9 +42,7 @@
     <repositories>
         <repository>
             <id>central</id>
-            <name>aliyun maven</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-            <layout>default</layout>
+            <url>https://maven.aliyun.com/repository/central</url>
             <releases>
                 <enabled>true</enabled>
             </releases>

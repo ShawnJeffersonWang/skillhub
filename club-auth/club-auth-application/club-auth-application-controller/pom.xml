@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.club</groupId>
-        <artifactId>club-auth</artifactId>
+        <artifactId>club-auth-application</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../../pom.xml</relativePath>
     </parent>
 
+    <groupId>com.club</groupId>
     <artifactId>club-auth-application-controller</artifactId>
 
     <properties>
@@ -22,7 +22,14 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>3.0.4</version>
+            <version>3.1.0</version>
+        </dependency>
+        <!-- Sa-Token 权限认证，在线文档：https://sa-token.cc -->
+        <dependency>
+            <groupId>cn.dev33</groupId>
+            <!--boot后面加3，不然不用了，调泪目了-->
+            <artifactId>sa-token-spring-boot3-starter</artifactId>
+            <version>1.37.0</version>
         </dependency>
         <dependency>
             <groupId>com.club</groupId>
