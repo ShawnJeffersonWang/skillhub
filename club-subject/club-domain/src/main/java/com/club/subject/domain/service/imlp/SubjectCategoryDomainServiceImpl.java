@@ -1,6 +1,7 @@
 package com.club.subject.domain.service.imlp;
 
 import com.alibaba.fastjson.JSON;
+import com.club.subject.common.enums.IsDeletedFlagEnum;
 import com.club.subject.domain.convert.SubjectCategoryConverter;
 import com.club.subject.domain.entity.SubjectCategoryBO;
 import com.club.subject.domain.service.SubjectCategoryDomainService;
@@ -28,15 +29,34 @@ public class SubjectCategoryDomainServiceImpl implements SubjectCategoryDomainSe
         subjectCategoryService.insert(subjectCategory);
     }
 
-//    @Override
-//    public List<SubjectCategoryBO> queryPrimaryCategory() {
-//        List<SubjectCategory> subjectCategoryList = subjectCategoryService.queryPrimaryCategory();
-//        List<SubjectCategoryBO> boList = SubjectCategoryConverter.INSTANCE
-//                .convertBoToCategory(subjectCategoryList);
-//        if (log.isInfoEnabled()) {
-//            log.info("SubjectCategoryController.queryPrimaryCategory.boList:{}",
-//                    JSON.toJSONString(boList));
-//        }
-//        return boList;
-//    }
+    @Override
+    public List<SubjectCategoryBO> queryCategory(SubjectCategoryBO subjectCategoryBO) {
+        SubjectCategory subjectCategory = SubjectCategoryConverter.INSTANCE
+                .convertBoToCategory(subjectCategoryBO);
+        List<SubjectCategory> subjectCategoryList = subjectCategoryService.queryCategory(subjectCategory);
+        List<SubjectCategoryBO> boList = SubjectCategoryConverter.INSTANCE
+                .convertBoToCategory(subjectCategoryList);
+        if (log.isInfoEnabled()) {
+            log.info("SubjectCategoryController.queryPrimaryCategory.boList:{}",
+                    JSON.toJSONString(boList));
+        }
+        return boList;
+    }
+
+    @Override
+    public Boolean update(SubjectCategoryBO subjectCategoryBO) {
+        SubjectCategory subjectCategory = SubjectCategoryConverter.INSTANCE
+                .convertBoToCategory(subjectCategoryBO);
+        int count = subjectCategoryService.update(subjectCategory);
+        return count > 0;
+    }
+
+    @Override
+    public Boolean delete(SubjectCategoryBO subjectCategoryBO) {
+        SubjectCategory subjectCategory = SubjectCategoryConverter.INSTANCE
+                .convertBoToCategory(subjectCategoryBO);
+        subjectCategory.setIsDeleted(IsDeletedFlagEnum.DELETED);
+        int count = subjectCategoryService.update(subjectCategory);
+        return count > 0;
+    }
 }

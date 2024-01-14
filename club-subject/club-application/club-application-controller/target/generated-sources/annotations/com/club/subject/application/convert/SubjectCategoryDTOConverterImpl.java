@@ -8,10 +8,27 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-01-14T18:23:27+0800",
+    date = "2024-01-15T01:39:22+0800",
     comments = "version: 1.5.3.Final, compiler: javac, environment: Java 21.0.1 (Oracle Corporation)"
 )
 public class SubjectCategoryDTOConverterImpl implements SubjectCategoryDTOConverter {
+
+    @Override
+    public SubjectCategoryBO convertBoToCategory(SubjectCategoryDTO subjectCategoryDTO) {
+        if ( subjectCategoryDTO == null ) {
+            return null;
+        }
+
+        SubjectCategoryBO subjectCategoryBO = new SubjectCategoryBO();
+
+        subjectCategoryBO.setId( subjectCategoryDTO.getId() );
+        subjectCategoryBO.setCategoryName( subjectCategoryDTO.getCategoryName() );
+        subjectCategoryBO.setCategoryType( subjectCategoryDTO.getCategoryType() );
+        subjectCategoryBO.setImageUrl( subjectCategoryDTO.getImageUrl() );
+        subjectCategoryBO.setParentId( subjectCategoryDTO.getParentId() );
+
+        return subjectCategoryBO;
+    }
 
     @Override
     public SubjectCategoryBO convertDtoToCategoryBO(SubjectCategoryDTO subjectCategoryDTO) {
@@ -20,6 +37,12 @@ public class SubjectCategoryDTOConverterImpl implements SubjectCategoryDTOConver
         }
 
         SubjectCategoryBO subjectCategoryBO = new SubjectCategoryBO();
+
+        subjectCategoryBO.setId( subjectCategoryDTO.getId() );
+        subjectCategoryBO.setCategoryName( subjectCategoryDTO.getCategoryName() );
+        subjectCategoryBO.setCategoryType( subjectCategoryDTO.getCategoryType() );
+        subjectCategoryBO.setImageUrl( subjectCategoryDTO.getImageUrl() );
+        subjectCategoryBO.setParentId( subjectCategoryDTO.getParentId() );
 
         return subjectCategoryBO;
     }
@@ -31,6 +54,12 @@ public class SubjectCategoryDTOConverterImpl implements SubjectCategoryDTOConver
         }
 
         SubjectCategoryDTO subjectCategoryDTO = new SubjectCategoryDTO();
+
+        subjectCategoryDTO.setId( subjectCategoryBO.getId() );
+        subjectCategoryDTO.setCategoryName( subjectCategoryBO.getCategoryName() );
+        subjectCategoryDTO.setCategoryType( subjectCategoryBO.getCategoryType() );
+        subjectCategoryDTO.setImageUrl( subjectCategoryBO.getImageUrl() );
+        subjectCategoryDTO.setParentId( subjectCategoryBO.getParentId() );
 
         return subjectCategoryDTO;
     }

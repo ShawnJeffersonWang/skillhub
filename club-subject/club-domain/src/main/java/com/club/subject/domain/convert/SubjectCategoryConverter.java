@@ -14,5 +14,5 @@ public interface SubjectCategoryConverter {
 
     SubjectCategory convertBoToCategory(SubjectCategoryBO subjectCategoryBO);
 
-//    List<SubjectCategoryBO> convertBoToCategory(List<SubjectCategory> categoryList);
+    List<SubjectCategoryBO> convertBoToCategory(List<SubjectCategory> categoryList);
 }
