@@ -11,5 +11,15 @@ public interface SubjectCategoryDomainService {
     /**
      *查询岗位大类
      */
-//    List<SubjectCategoryBO> queryPrimaryCategory();
+    List<SubjectCategoryBO> queryCategory(SubjectCategoryBO subjectCategoryBO);
+
+    /**
+     *更新分类
+     */
+    Boolean update(SubjectCategoryBO subjectCategoryBO);
+
+    /**
+     * 删除分类
+     */
+    Boolean delete(SubjectCategoryBO subjectCategoryBO);
 }
