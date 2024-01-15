@@ -9,12 +9,12 @@ public interface SubjectCategoryDomainService {
     void add(SubjectCategoryBO subjectCategoryServiceBO);
 
     /**
-     *查询岗位大类
+     * 查询岗位大类
      */
     List<SubjectCategoryBO> queryCategory(SubjectCategoryBO subjectCategoryBO);
 
     /**
-     *更新分类
+     * 更新分类
      */
     Boolean update(SubjectCategoryBO subjectCategoryBO);
 

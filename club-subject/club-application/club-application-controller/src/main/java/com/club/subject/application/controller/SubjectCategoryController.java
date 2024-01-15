@@ -1,19 +1,21 @@
 package com.club.subject.application.controller;
 
 
-import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson2.JSON;
 import com.club.subject.application.convert.SubjectCategoryDTOConverter;
 import com.club.subject.application.dto.SubjectCategoryDTO;
 import com.club.subject.common.entity.Result;
 import com.club.subject.domain.entity.SubjectCategoryBO;
 import com.club.subject.domain.service.SubjectCategoryDomainService;
 import com.google.common.base.Preconditions;
-import io.micrometer.common.util.StringUtils;
-import jdk.jfr.Category;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.*;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 
@@ -53,9 +55,10 @@ public class SubjectCategoryController {
 
 
     @PostMapping("/queryPrimaryCategory")
-    public Result<List<SubjectCategoryDTO>> queryPrimaryCategory() {
+    public Result<List<SubjectCategoryDTO>> queryPrimaryCategory(@RequestBody SubjectCategoryDTO subjectCategoryDTO) {
         try {
-            SubjectCategoryBO subjectCategoryBO = new SubjectCategoryBO();
+            SubjectCategoryBO subjectCategoryBO = SubjectCategoryDTOConverter.INSTANCE.
+                    convertDtoToCategoryBO(subjectCategoryDTO);
             List<SubjectCategoryBO> subjectCategoryBOList = subjectCategoryDomainService.queryCategory(subjectCategoryBO);
             List<SubjectCategoryDTO> subjectCategoryDTOList = SubjectCategoryDTOConverter.INSTANCE.
                     convertBoToCategoryDTOList(subjectCategoryBOList);

@@ -2,8 +2,8 @@ package com.club.subject.infra.basic.entity;
 
 import lombok.Data;
 
-import java.util.Date;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 题目分类(SubjectCategory)实体类
