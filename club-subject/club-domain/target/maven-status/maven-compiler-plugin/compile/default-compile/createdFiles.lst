@@ -1,0 +1,10 @@
+com\club\subject\domain\convert\SubjectCategoryConverter.class
+com\club\subject\domain\convert\SubjectCategoryConverterImpl.class
+com\club\subject\domain\service\imlp\SubjectCategoryDomainServiceImpl.class
+com\club\subject\domain\convert\SubjectLabelConverter.class
+com\club\subject\domain\convert\SubjectLabelConverterImpl.class
+com\club\subject\domain\service\SubjectLabelDomainService.class
+com\club\subject\domain\service\imlp\SubjectLabelDomainServiceImpl.class
+com\club\subject\domain\service\SubjectCategoryDomainService.class
+com\club\subject\domain\entity\SubjectCategoryBO.class
+com\club\subject\domain\entity\SubjectLabelBO.class
