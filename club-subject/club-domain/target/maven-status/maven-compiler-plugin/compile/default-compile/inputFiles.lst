@@ -1,4 +1,8 @@
 D:\dev-repo\club\club-subject\club-domain\src\main\java\com\club\subject\domain\service\imlp\SubjectCategoryDomainServiceImpl.java
+D:\dev-repo\club\club-subject\club-domain\src\main\java\com\club\subject\domain\convert\SubjectLabelConverter.java
 D:\dev-repo\club\club-subject\club-domain\src\main\java\com\club\subject\domain\entity\SubjectCategoryBO.java
 D:\dev-repo\club\club-subject\club-domain\src\main\java\com\club\subject\domain\service\SubjectCategoryDomainService.java
+D:\dev-repo\club\club-subject\club-domain\src\main\java\com\club\subject\domain\entity\SubjectLabelBO.java
+D:\dev-repo\club\club-subject\club-domain\src\main\java\com\club\subject\domain\service\SubjectLabelDomainService.java
 D:\dev-repo\club\club-subject\club-domain\src\main\java\com\club\subject\domain\convert\SubjectCategoryConverter.java
+D:\dev-repo\club\club-subject\club-domain\src\main\java\com\club\subject\domain\service\imlp\SubjectLabelDomainServiceImpl.java
