@@ -1,13 +1,13 @@
 package com.club.subject.infra.basic.service.impl;
 
-import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson2.JSON;
 import com.club.subject.infra.basic.entity.SubjectCategory;
 import com.club.subject.infra.basic.mapper.SubjectCategoryDao;
 import com.club.subject.infra.basic.service.SubjectCategoryService;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**

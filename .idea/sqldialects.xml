@@ -2,5 +2,7 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/club-subject/club-infra/src/main/resources/mapper/SubjectCategoryDao.xml" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/club-subject/club-infra/src/main/resources/mapper/SubjectLabelDao.xml" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/club-subject/club-infra/src/main/resources/mapper/SubjectMappingDao.xml" dialect="GenericSQL" />
   </component>
 </project>
