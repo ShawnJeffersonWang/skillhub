@@ -2,36 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/club-application.iml" filepath="$PROJECT_DIR$/club-application.iml" />
-      <module fileurl="file://$PROJECT_DIR$/club-application-controller.iml" filepath="$PROJECT_DIR$/club-application-controller.iml" />
-      <module fileurl="file://$PROJECT_DIR$/club-application-job.iml" filepath="$PROJECT_DIR$/club-application-job.iml" />
-      <module fileurl="file://$PROJECT_DIR$/club-application-mq.iml" filepath="$PROJECT_DIR$/club-application-mq.iml" />
-      <module fileurl="file://$PROJECT_DIR$/club-auth.iml" filepath="$PROJECT_DIR$/club-auth.iml" />
-      <module fileurl="file://$PROJECT_DIR$/club-auth-api.iml" filepath="$PROJECT_DIR$/club-auth-api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/club-auth-application.iml" filepath="$PROJECT_DIR$/club-auth-application.iml" />
-      <module fileurl="file://$PROJECT_DIR$/club-auth-application-controller.iml" filepath="$PROJECT_DIR$/club-auth-application-controller.iml" />
-      <module fileurl="file://$PROJECT_DIR$/club-auth-application-job.iml" filepath="$PROJECT_DIR$/club-auth-application-job.iml" />
-      <module fileurl="file://$PROJECT_DIR$/club-auth-application-mq.iml" filepath="$PROJECT_DIR$/club-auth-application-mq.iml" />
-      <module fileurl="file://$PROJECT_DIR$/club-auth-common.iml" filepath="$PROJECT_DIR$/club-auth-common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/club-auth-domain.iml" filepath="$PROJECT_DIR$/club-auth-domain.iml" />
-      <module fileurl="file://$PROJECT_DIR$/club-auth-infra.iml" filepath="$PROJECT_DIR$/club-auth-infra.iml" />
-      <module fileurl="file://$PROJECT_DIR$/club-auth-starter.iml" filepath="$PROJECT_DIR$/club-auth-starter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/club-common.iml" filepath="$PROJECT_DIR$/club-common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/club-domain.iml" filepath="$PROJECT_DIR$/club-domain.iml" />
-      <module fileurl="file://$PROJECT_DIR$/club-gateway.iml" filepath="$PROJECT_DIR$/club-gateway.iml" />
-      <module fileurl="file://$PROJECT_DIR$/club-infra.iml" filepath="$PROJECT_DIR$/club-infra.iml" />
-      <module fileurl="file://$PROJECT_DIR$/club-starter.iml" filepath="$PROJECT_DIR$/club-starter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/club-subject.iml" filepath="$PROJECT_DIR$/club-subject.iml" />
-      <module fileurl="file://$PROJECT_DIR$/club-subject-api.iml" filepath="$PROJECT_DIR$/club-subject-api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jc-club-auth/jc-club-auth-api/jc-club-auth-api.iml" filepath="$PROJECT_DIR$/jc-club-auth/jc-club-auth-api/jc-club-auth-api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jc-club-auth/jc-club-auth-application/jc-club-auth-application.iml" filepath="$PROJECT_DIR$/jc-club-auth/jc-club-auth-application/jc-club-auth-application.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jc-club-auth/jc-club-auth-application/jc-club-auth-application-controller/jc-club-auth-application-controller.iml" filepath="$PROJECT_DIR$/jc-club-auth/jc-club-auth-application/jc-club-auth-application-controller/jc-club-auth-application-controller.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jc-club-auth/jc-club-auth-application/jc-club-auth-application-job/jc-club-auth-application-job.iml" filepath="$PROJECT_DIR$/jc-club-auth/jc-club-auth-application/jc-club-auth-application-job/jc-club-auth-application-job.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jc-club-auth/jc-club-auth-application/jc-club-auth-application-mq/jc-club-auth-application-mq.iml" filepath="$PROJECT_DIR$/jc-club-auth/jc-club-auth-application/jc-club-auth-application-mq/jc-club-auth-application-mq.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jc-club-auth/jc-club-auth-common/jc-club-auth-common.iml" filepath="$PROJECT_DIR$/jc-club-auth/jc-club-auth-common/jc-club-auth-common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jc-club-auth/jc-club-auth-domain/jc-club-auth-domain.iml" filepath="$PROJECT_DIR$/jc-club-auth/jc-club-auth-domain/jc-club-auth-domain.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jc-club-auth/jc-club-auth-infra/jc-club-auth-infra.iml" filepath="$PROJECT_DIR$/jc-club-auth/jc-club-auth-infra/jc-club-auth-infra.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jc-club-auth/jc-club-auth-starter/jc-club-auth-starter.iml" filepath="$PROJECT_DIR$/jc-club-auth/jc-club-auth-starter/jc-club-auth-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/club.iml" filepath="$PROJECT_DIR$/.idea/club.iml" />
     </modules>
   </component>
 </project>
