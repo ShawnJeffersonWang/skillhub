@@ -1,9 +1,0 @@
-com\club\subject\application\convert\SubjectLabelDTOConverterImpl.class
-com\club\subject\application\convert\SubjectLabelDTOConverter.class
-com\club\subject\application\convert\SubjectCategoryDTOConverterImpl.class
-com\club\subject\application\dto\SubjectLabelDTO.class
-com\club\subject\application\controller\SubjectLabelController.class
-com\club\subject\application\dto\SubjectCategoryDTO.class
-com\club\subject\application\controller\SubjectCategoryController.class
-com\club\subject\application\controller\SubjectController.class
-com\club\subject\application\convert\SubjectCategoryDTOConverter.class

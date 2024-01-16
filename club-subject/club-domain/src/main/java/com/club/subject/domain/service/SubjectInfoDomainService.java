@@ -1,5 +1,6 @@
 package com.club.subject.domain.service;
 
+import com.club.subject.common.entity.PageResult;
 import com.club.subject.domain.entity.SubjectInfoBO;
 
 /**
@@ -12,4 +13,13 @@ public interface SubjectInfoDomainService {
      */
     void add(SubjectInfoBO subjectInfoBO);
 
+    /**
+     * 分页查询
+     */
+//    PageResult<SubjectInfoBO> getSubjectPage(SubjectInfoBO subjectInfoBO);
+
+    /**
+     * 查询题目信息
+     */
+    SubjectInfoBO querySubjectInfo(SubjectInfoBO subjectInfoBO);
 }

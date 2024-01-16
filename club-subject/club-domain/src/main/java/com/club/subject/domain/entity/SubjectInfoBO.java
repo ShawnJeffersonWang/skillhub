@@ -1,5 +1,6 @@
 package com.club.subject.domain.entity;
 
+import com.club.subject.common.entity.PageInfo;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -12,7 +13,7 @@ import java.util.List;
  * @since 2023-10-05 21:28:57
  */
 @Data
-public class SubjectInfoBO implements Serializable {
+public class SubjectInfoBO extends PageInfo implements Serializable {
     /**
      * 主键
      */
@@ -61,11 +62,15 @@ public class SubjectInfoBO implements Serializable {
     /**
      * 分类id
      */
-    private List<Integer> labelId;
+    private List<Integer> labelIds;
 
     /**
      * 答案选项
      */
     private List<SubjectAnswerBO> optionList;
+
+    private Long categoryId;
+
+    private Long labelId;
 }
 

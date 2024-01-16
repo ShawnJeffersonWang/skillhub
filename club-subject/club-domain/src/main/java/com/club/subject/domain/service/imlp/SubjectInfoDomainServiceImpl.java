@@ -1,9 +1,10 @@
 package com.club.subject.domain.service.imlp;
 
 import com.alibaba.fastjson2.JSON;
+import com.club.subject.common.entity.PageResult;
 import com.club.subject.domain.convert.SubjectInfoConverter;
-import com.club.subject.domain.convert.SubjectLabelConverter;
 import com.club.subject.domain.entity.SubjectInfoBO;
+import com.club.subject.domain.entity.SubjectOptionBO;
 import com.club.subject.domain.handler.subject.SubjectTypeHandler;
 import com.club.subject.domain.handler.subject.SubjectTypeHandlerFactory;
 import com.club.subject.domain.service.SubjectInfoDomainService;
@@ -41,7 +42,7 @@ public class SubjectInfoDomainServiceImpl implements SubjectInfoDomainService {
         SubjectTypeHandler handler = subjectTypeHandlerFactory.getHandler(subjectInfo.getSubjectType());
         handler.add(subjectInfoBO);
         List<Integer> categoryIds = subjectInfoBO.getCategoryIds();
-        List<Integer> labelIds = subjectInfoBO.getLabelId();
+        List<Integer> labelIds = subjectInfoBO.getLabelIds();
         List<SubjectMapping> mappingList = new LinkedList<>();
         categoryIds.forEach(categoryId -> {
             labelIds.forEach(labelId -> {
@@ -53,5 +54,34 @@ public class SubjectInfoDomainServiceImpl implements SubjectInfoDomainService {
             });
         });
         subjectMappingService.batchInsert(mappingList);
+    }
+
+//    @Override
+//    public PageResult<SubjectInfoBO> getSubjectPage(SubjectInfoBO subjectInfoBO) {
+//        PageResult<SubjectInfoBO> pageResult = new PageResult<>();
+//        pageResult.setPageNo(subjectInfoBO.getPageNo());
+//        pageResult.setPageSize(subjectInfoBO.getPageSize());
+//        int start = (subjectInfoBO.getPageNo() - 1) * subjectInfoBO.getPageSize();
+//        SubjectInfo subjectInfo = SubjectInfoConverter.INSTANCE.convertBOToInfo(subjectInfoBO);
+//        int count = subjectInfoService.countByCondition(subjectInfo, subjectInfoBO.getCategoryId(), subjectInfoBO.getLabelId());
+//        if (count == 0) {
+//            return pageResult;
+//        }
+//        List<SubjectInfo> subjectInfoList = subjectInfoService.queryPage(subjectInfo,
+//                subjectInfoBO.getCategoryId(), subjectInfoBO.getLabelId(), start, subjectInfoBO.getPageSize());
+//        List<SubjectInfoBO> subjectInfoBOS = SubjectInfoConverter.INSTANCE.convertListInfoToBO(subjectInfoList);
+//        pageResult.setRecords(subjectInfoBOS);
+//        pageResult.setTotal(count);
+//        return pageResult;
+//    }
+
+    @Override
+    public SubjectInfoBO querySubjectInfo(SubjectInfoBO subjectInfoBO) {
+        SubjectInfo subjectInfo = subjectInfoService.queryById(subjectInfoBO.getId());
+        Integer subjectType = subjectInfo.getSubjectType();
+        SubjectTypeHandler handler = subjectTypeHandlerFactory.getHandler(subjectType);
+        SubjectOptionBO optionBO = handler.query(subjectInfo.getId().intValue());
+        SubjectInfoBO bo = SubjectInfoConverter.INSTANCE.convertOptionAndInfoToBo(optionBO,subjectInfo);
+        return bo;
     }
 }

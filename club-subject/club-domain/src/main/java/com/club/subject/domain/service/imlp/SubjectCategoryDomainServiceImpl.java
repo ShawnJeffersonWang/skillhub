@@ -30,20 +30,20 @@ public class SubjectCategoryDomainServiceImpl implements SubjectCategoryDomainSe
         subjectCategoryService.insert(subjectCategory);
     }
 
-    @Override
-    public List<SubjectCategoryBO> queryCategory(SubjectCategoryBO subjectCategoryBO) {
-        SubjectCategory subjectCategory = SubjectCategoryConverter.INSTANCE
-                .convertBoToCategory(subjectCategoryBO);
-        subjectCategory.setIsDeleted(IsDeletedFlagEnum.UN_DELETED.getCode());
-        List<SubjectCategory> subjectCategoryList = subjectCategoryService.queryCategory(subjectCategory);
-        List<SubjectCategoryBO> boList = SubjectCategoryConverter.INSTANCE
-                .convertBoToCategory(subjectCategoryList);
-        if (log.isInfoEnabled()) {
-            log.info("SubjectCategoryController.queryCategory.boList:{}",
-                    JSON.toJSONString(boList));
-        }
-        return boList;
-    }
+//    @Override
+//    public List<SubjectCategoryBO> queryCategory(SubjectCategoryBO subjectCategoryBO) {
+//        SubjectCategory subjectCategory = SubjectCategoryConverter.INSTANCE
+//                .convertBoToCategory(subjectCategoryBO);
+//        subjectCategory.setIsDeleted(IsDeletedFlagEnum.UN_DELETED.getCode());
+//        List<SubjectCategory> subjectCategoryList = subjectCategoryService.queryCategory(subjectCategory);
+//        List<SubjectCategoryBO> boList = SubjectCategoryConverter.INSTANCE
+//                .convertBoToCategory(subjectCategoryList);
+//        if (log.isInfoEnabled()) {
+//            log.info("SubjectCategoryController.queryCategory.boList:{}",
+//                    JSON.toJSONString(boList));
+//        }
+//        return boList;
+//    }
 
     @Override
     public Boolean update(SubjectCategoryBO subjectCategoryBO) {

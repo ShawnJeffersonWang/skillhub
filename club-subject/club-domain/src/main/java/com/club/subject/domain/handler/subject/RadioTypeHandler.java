@@ -3,6 +3,7 @@ package com.club.subject.domain.handler.subject;
 import com.club.subject.common.enums.SubjectInfoTypeEnum;
 import com.club.subject.domain.convert.RadioSubjectConverter;
 import com.club.subject.domain.entity.SubjectInfoBO;
+import com.club.subject.domain.entity.SubjectOptionBO;
 import com.club.subject.infra.basic.entity.SubjectRadio;
 import com.club.subject.infra.basic.service.SubjectRadioService;
 import jakarta.annotation.Resource;
@@ -34,5 +35,10 @@ public class RadioTypeHandler implements SubjectTypeHandler{
             subjectRadioList.add(subjectRadio);
         });
         subjectRadioService.batchInsert(subjectRadioList);
+    }
+
+    @Override
+    public SubjectOptionBO query(int subjectId) {
+        return null;
     }
 }
