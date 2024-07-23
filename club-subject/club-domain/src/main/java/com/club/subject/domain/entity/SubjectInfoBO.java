@@ -65,6 +65,11 @@ public class SubjectInfoBO extends PageInfo implements Serializable {
     private List<Integer> labelIds;
 
     /**
+     * 标签name
+     */
+    private List<String> labelName;
+
+    /**
      * 答案选项
      */
     private List<SubjectAnswerBO> optionList;

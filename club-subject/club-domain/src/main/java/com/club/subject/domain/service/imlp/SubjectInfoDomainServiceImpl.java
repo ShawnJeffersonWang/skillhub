@@ -81,7 +81,7 @@ public class SubjectInfoDomainServiceImpl implements SubjectInfoDomainService {
         Integer subjectType = subjectInfo.getSubjectType();
         SubjectTypeHandler handler = subjectTypeHandlerFactory.getHandler(subjectType);
         SubjectOptionBO optionBO = handler.query(subjectInfo.getId().intValue());
-        SubjectInfoBO bo = SubjectInfoConverter.INSTANCE.convertOptionAndInfoToBo(optionBO,subjectInfo);
+        SubjectInfoBO bo = SubjectInfoConverter.INSTANCE.convertOptionAndInfoToBo(optionBO, subjectInfo);
         return bo;
     }
 }
